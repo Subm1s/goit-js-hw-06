@@ -15,13 +15,15 @@ const images = [
 
 const image = [...images];
 const newGallery = document.querySelector('.gallery')
+const arrGalleryItem = [];
 
 image.forEach(item => {
   let itemOfGallery =
     (`<li>
     <img src="${item.url}", alt="${item.alt}", width = "350">
   </li>`);
-     newGallery.insertAdjacentHTML("beforeend", itemOfGallery);
-    });
+arrGalleryItem.push(itemOfGallery);
+});
+const finalGallery = arrGalleryItem.join('');
 
-
+newGallery.insertAdjacentHTML("beforeend", finalGallery);
